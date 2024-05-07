@@ -73,7 +73,7 @@ double calc_cpp(double a, double b) {
 int Lo4As()
 {
 	setlocale(LC_ALL, "rus");
-	cout << "Лабораторная работа №4. Выполнил студент Аверкина Виктория группы 6104 Варисант 91" << endl << "Вычислить X=-91*pi-sin(pi*a)-cos(b)-tg(a)+ctg(-a)+pi/(a*a+b)/(91*a-b)" << endl;
+	cout << "Лабораторная работа №4." << endl << "Вычислить X=-91*pi-sin(pi*a)-cos(b)-tg(a)+ctg(-a)+pi/(a*a+b)/(91*a-b)" << endl;
 	double a, b;
 	cout << "a = "; cin >> a; // потоковый ввод/вывод
 	cout << "b = "; cin >> b;
