@@ -1,6 +1,6 @@
-#include <iostream> // потоковый ввод/вывод 
+#include <iostream> // РїРѕРґРєР»СЋС‡РµРЅРёРµ СЃС‚Р°РЅРґР°СЂС‚РЅРѕРіРѕ РІРІРѕРґР°-РІС‹РІРѕРґР°
 using namespace std;
-//функция вычисления выражения (4*a-99-3*b)/(10*c*c-5/d);
+//СЂРµР°Р»РёР·Р°С†РёСЏ С„РѕСЂРјСѓР»С‹ (4*a-99-3*b)/(10*c*c-5/d);
 int calc(int a, int b, int c, int d) {
 	int result = 0;
 	__asm {
@@ -12,7 +12,7 @@ int calc(int a, int b, int c, int d) {
 		imul eax, 4; <eax> = a * 4
 		sub eax, ebx; <eax> = a * 4 - b * 3
 		sub eax, 99; <eax> = a * 4 - b * 3 - 99
-		push eax; в стеке a * 4 - b * 3 - 99
+		push eax; СЃРѕС…СЂР°РЅСЏРµРј a * 4 - b * 3 - 99
 		imul ecx, ecx; <ecx:ecx> = c * c
 		imul ecx, 10; <ecx> = c * c * 10
 		mov eax, -5; <eax> = -5
@@ -25,7 +25,7 @@ int calc(int a, int b, int c, int d) {
 			idiv ecx; <eax> = (a * 4 - b * 3 - 99) / (c * c * 10 - 5 / d)
 			mov result, eax; result = eax
 	}
-	return result; // возвращаем результат вычисления выражения 
+	return result; // РІРѕР·РІСЂР°С‰Р°РµС‚ СЂРµР·СѓР»СЊС‚Р°С‚ РІС‹С‡РёСЃР»РµРЅРёСЏ С„РѕСЂРјСѓР»С‹
 }
 
 int calc_cpp(int a, int b, int c, int d) {
@@ -34,18 +34,18 @@ int calc_cpp(int a, int b, int c, int d) {
 
 int Lo1As() {
 	setlocale(LC_ALL, "rus");
-	cout << "Лабораторная работа №1. Выполнил студент Аверкина Виктория группы 6104 Варисант 91" << endl << "Вычислить выражение (4 * a - 99 - 3 * b) / (10 * c * c - 5 / d)" << endl;
+	cout << "Р›Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏ СЂР°Р±РѕС‚Р° в„–1." << endl << "Р’С‹С‡РёСЃР»РµРЅРёРµ С„РѕСЂРјСѓР»С‹ (4 * a - 99 - 3 * b) / (10 * c * c - 5 / d)" << endl;
 	int a, b, c, d;
-	cout << "a = "; cin >> a; // потоковый ввод/вывод
+	cout << "a = "; cin >> a; // РІРІРѕРґ Р·РЅР°С‡РµРЅРёР№
 	cout << "b = "; cin >> b;
 	cout << "c = "; cin >> c;
 	cout << "d = "; cin >> d;
 	if ((d == 0) || ((10 * c * c - 5 / d) == 0)) {
-		cout << "Ошибка! деление на 0" << endl;
+		cout << "РћС€РёР±РєР°! Р”РµР»РµРЅРёРµ РЅР° 0" << endl;
 	}
 	else {
-		cout << "Резудьтат на asm: " << calc(a, b, c, d) << endl;
-		cout << "результат на c++: " << calc_cpp(a, b, c, d) << endl;
+		cout << "Р РµР·СѓР»СЊС‚Р°С‚ РЅР° asm: " << calc(a, b, c, d) << endl;
+		cout << "Р РµР·СѓР»СЊС‚Р°С‚ РЅР° c++: " << calc_cpp(a, b, c, d) << endl;
 	}
 	system("PAUSE");
 	return 0;
